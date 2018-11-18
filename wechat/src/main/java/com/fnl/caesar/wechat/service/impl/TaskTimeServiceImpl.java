@@ -22,7 +22,7 @@ public class TaskTimeServiceImpl implements TaskTimeService {
     @Autowired
     RedisTemplate redisTemplate;
 
-    @Scheduled(fixedRate = 1000*60*10,initialDelay = 2000)
+    @Scheduled(fixedRate = 1000*7200,initialDelay = 2000)
     @Override
     public void getAccessToken() {
         AccessToken accessToken = WechatUtil.getAccessToken();

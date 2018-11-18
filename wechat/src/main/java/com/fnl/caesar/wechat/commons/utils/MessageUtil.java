@@ -1,6 +1,6 @@
 package com.fnl.caesar.wechat.commons.utils;
 
-import com.fnl.caesar.wechat.model.wechat.MessageText;
+import com.fnl.caesar.wechat.model.wechat.message.MessageText;
 import com.thoughtworks.xstream.XStream;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -10,7 +10,6 @@ import org.dom4j.io.SAXReader;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

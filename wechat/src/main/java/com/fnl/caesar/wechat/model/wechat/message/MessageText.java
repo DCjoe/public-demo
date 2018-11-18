@@ -1,4 +1,4 @@
-package com.fnl.caesar.wechat.model.wechat;
+package com.fnl.caesar.wechat.model.wechat.message;
 
 import lombok.Data;
 
