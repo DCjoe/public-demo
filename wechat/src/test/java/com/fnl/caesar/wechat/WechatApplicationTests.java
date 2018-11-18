@@ -12,6 +12,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -48,19 +50,22 @@ public class WechatApplicationTests {
         clickButton01.setSub_button(new Button[]{});
 
         ViewButton viewButton01 = new ViewButton();
-        viewButton01.setUrl("https://d48d7b3a.ngrok.io/");
-        viewButton01.setType("view");
-        viewButton01.setName("网页");
-        viewButton01.setSub_button(new Button[]{});
-
-
+        try {
+            String url = URLEncoder.encode("http://d48d7b3a.ngrok.io/","UTF-8");
+            viewButton01.setUrl(url);
+            viewButton01.setType("view");
+            viewButton01.setName("网页");
+            viewButton01.setSub_button(new Button[]{});
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
         Button button01 = new Button();
         button01.setName("学习");
-        button01.setSub_button(new Button[]{clickButton01,viewButton01});
+        button01.setSub_button(new Button[]{viewButton01});
 
         Button button02 = new Button();
         button02.setName("微信接口");
-        button02.setSub_button(new Button[]{});
+        button02.setSub_button(new Button[]{clickButton01});
 
 
         Menu menu = new Menu();

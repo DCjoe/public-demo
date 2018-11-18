@@ -20,8 +20,7 @@ import java.util.Map;
  **/
 public class MessageUtil {
 
-    public static Map<String,String> xmlToMap(HttpServletRequest request)
-    {
+    public static Map<String,String> xmlToMap(HttpServletRequest request) {
         Map<String,String> map = new HashMap<>();
         SAXReader reader = new SAXReader();
 
