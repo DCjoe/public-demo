@@ -1,7 +1,5 @@
 package com.fnl.caesar.wechat.service;
 
-import com.fnl.caesar.wechat.model.AccessToken;
-
 /**
  * @ClassName IWechatService
  * @Description TODO

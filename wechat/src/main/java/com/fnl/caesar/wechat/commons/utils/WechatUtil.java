@@ -1,7 +1,7 @@
 package com.fnl.caesar.wechat.commons.utils;
 
 import com.alibaba.fastjson.JSONObject;
-import com.fnl.caesar.wechat.model.AccessToken;
+import com.fnl.caesar.wechat.model.wechat.AccessToken;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;

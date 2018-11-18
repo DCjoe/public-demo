@@ -1,10 +1,9 @@
 package com.fnl.caesar.wechat.service.impl;
 
 import com.fnl.caesar.wechat.commons.utils.WechatUtil;
-import com.fnl.caesar.wechat.model.AccessToken;
+import com.fnl.caesar.wechat.model.wechat.AccessToken;
 import com.fnl.caesar.wechat.service.IWechatService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -22,12 +21,18 @@ public class WechatServiceImpl implements IWechatService {
     @Autowired
     RedisTemplate redisTemplate;
 
-    @Cacheable(key = "#p0")
     @Override
     public String getAccessToken() {
-        AccessToken accessToken = WechatUtil.getAccessToken();
-        redisTemplate.opsForValue().set("AccessToken",accessToken.getAccess_token(),accessToken.getExpires_in(), TimeUnit.MINUTES);
-        System.out.println(accessToken.getAccess_token());
-        return accessToken.getAccess_token();
+        String result = "";
+        Object value = redisTemplate.opsForValue().get("AccessToken");
+        if(value == null){
+            AccessToken accessToken = WechatUtil.getAccessToken();
+            redisTemplate.opsForValue().set("AccessToken",accessToken.getAccess_token(),accessToken.getExpires_in(), TimeUnit.SECONDS);
+            result = accessToken.getAccess_token();
+            System.out.println(result);
+        }else{
+            result = value.toString();
+        }
+        return result;
     }
 }

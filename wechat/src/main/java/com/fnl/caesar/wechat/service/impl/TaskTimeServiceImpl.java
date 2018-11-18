@@ -1,7 +1,7 @@
 package com.fnl.caesar.wechat.service.impl;
 
 import com.fnl.caesar.wechat.commons.utils.WechatUtil;
-import com.fnl.caesar.wechat.model.AccessToken;
+import com.fnl.caesar.wechat.model.wechat.AccessToken;
 import com.fnl.caesar.wechat.service.TaskTimeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
