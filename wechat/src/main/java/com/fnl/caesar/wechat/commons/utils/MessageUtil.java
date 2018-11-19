@@ -1,5 +1,6 @@
 package com.fnl.caesar.wechat.commons.utils;
 
+import com.fnl.caesar.wechat.model.wechat.message.BaseMessage;
 import com.fnl.caesar.wechat.model.wechat.message.MessageText;
 import com.thoughtworks.xstream.XStream;
 import org.dom4j.Document;
@@ -19,6 +20,45 @@ import java.util.Map;
  * @Date 2018/11/17
  **/
 public class MessageUtil {
+
+    /**
+     * 类型
+     */
+    //文本
+    public static final String MESSAGE_TEXT = "text";
+    /**
+     * 图文消息
+     */
+    public static final String MESSAGE_NEWS = "news";
+    /**
+     * 图片消息
+     */
+    public static final String MESSAGE_IMAGE = "image";
+    //音乐
+    public static final String MESSAGE_MUSIC = "music";
+    //语音消息
+    public static final String MESSAGE_VOICE = "voice";
+    //视频消息
+    public static final String MESSAGE_VIDEO = "video";
+    //短视频
+    public static final String MESSAGE_SHORTVIDEO = "shortvideo";
+    //连接消息
+    public static final String MESSAGE_LINK = "link";
+    //件推送消息中,上报地理位置事件
+    public static final String MESSAGE_LOCATION = "location";
+    //事件推送消息
+    public static final String MESSAGE_EVENT = "event";
+    //事件推送消息中,事件类型,subscribe(订阅)
+    public static final String MESSAGE_SUBSCRIBE = "subscribe";
+    //事件推送消息中,事件类型,unsubscribe(取消订阅)
+    public static final String MESSAGE_UNSUBSCRIBE = "unsubscribe";
+    //事件推送消息中,自定义菜单事件,点击菜单拉取消息时的事件推送
+    public static final String MESSAGE_CLICK = "CLICK";
+    //事件推送消息中,自定义菜单事件,点击菜单跳转链接时的事件推送
+    public static final String MESSAGE_VIEW = "VIEW";
+    //扫描二维码事件
+    public static final String MESSAGE_SCANCODE = "scancode_push";
+
 
     public static Map<String,String> xmlToMap(HttpServletRequest request) {
         Map<String,String> map = new HashMap<>();
@@ -63,13 +103,8 @@ public class MessageUtil {
      * @param FromUserName
      * @param ToUserName
      */
-    public static String initMessage(String FromUserName, String ToUserName) {
-        MessageText text = new MessageText();
-        text.setToUserName(FromUserName);
-        text.setFromUserName(ToUserName);
-        text.setContent("欢迎开始微信公众号");
-        text.setCreateTime(System.currentTimeMillis());
-        text.setMsgType("text");
-        return  messageToxml(text);
+    public static String initMessage(BaseMessage message) {
+
+        return  messageToxml(message);
     }
 }

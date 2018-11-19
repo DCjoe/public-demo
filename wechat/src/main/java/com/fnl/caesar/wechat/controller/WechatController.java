@@ -2,6 +2,7 @@ package com.fnl.caesar.wechat.controller;
 
 import com.fnl.caesar.wechat.commons.utils.MessageUtil;
 import com.fnl.caesar.wechat.commons.utils.WechatUtil;
+import com.fnl.caesar.wechat.model.wechat.message.MessageText;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -76,6 +77,12 @@ public class WechatController{
         //处理文本类型，实现输入1，回复相应的封装的内容
         if("text".equals(MsgType)){
             if("1".equals(Content)){
+                MessageText text = new MessageText();
+                text.setToUserName(FromUserName);
+                text.setFromUserName(ToUserName);
+                text.setContent("欢迎开始微信公众号");
+                text.setCreateTime(System.currentTimeMillis());
+                text.setMsgType("text");
                 message = MessageUtil.initMessage(FromUserName, ToUserName);
             }
         }
