@@ -1,5 +1,6 @@
 package com.fnl.caesar.wechat.model.wechat.message;
 
+import com.fnl.caesar.wechat.commons.annotations.XStreamCDATA;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import lombok.Data;
 

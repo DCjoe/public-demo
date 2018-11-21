@@ -15,6 +15,7 @@
 *.iws
 *.iml
 *.ipr
+<<<<<<< HEAD
 
 ### NetBeans ###
 /nbproject/private/
@@ -23,3 +24,5 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+=======
+>>>>>>> a5e15c37d3ad8d02a5c8f15ba7992e3ffd964420
