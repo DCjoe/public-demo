@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>wechat</module>
+        <module>web</module>
     </modules>
     <packaging>pom</packaging>
     <parent>
