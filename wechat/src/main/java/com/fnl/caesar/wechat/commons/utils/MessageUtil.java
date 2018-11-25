@@ -103,7 +103,7 @@ public class MessageUtil {
      * @param FromUserName
      * @param ToUserName
      */
-    public static String initMessage(String FromUserName, String ToUserName) {
+    public static String initMessage(String FromUserName ,String ToUserName) {
 
         return null;
     }

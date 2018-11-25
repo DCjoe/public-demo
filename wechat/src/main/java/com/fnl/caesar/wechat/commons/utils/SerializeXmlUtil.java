@@ -53,14 +53,14 @@ public class SerializeXmlUtil {
         boolean cdata = false;
         //首先,判断自己的属性是否存在XStreamCDATA标签
         cdata = existsCDATA(targetClass, fieldAlias);
-        if(cdata)
-            return cdata;
+        if(cdata){return cdata;}
         //如果cdata为false, 则遍历所有的父类直到java.lang.Object
         Class<?> superClass = targetClass.getSuperclass();
         while(!superClass.equals(Object.class)){
             cdata = existsCDATA(superClass, fieldAlias);
-            if(cdata)
+            if(cdata){
                 return cdata;
+            }
             superClass = superClass.getClass().getSuperclass();
         }
         return false;
