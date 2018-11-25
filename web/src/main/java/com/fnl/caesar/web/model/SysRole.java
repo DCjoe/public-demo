@@ -1,5 +1,7 @@
 package com.fnl.caesar.web.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -8,6 +10,8 @@ import java.util.List;
  * @Author dengcheng
  * @Date 2018/11/25
  **/
+@Entity
+@Data
 public class SysRole implements Serializable {
 
     /**
