@@ -27,7 +27,7 @@ public class MyShiroRealm extends AuthorizingRealm {
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         System.out.println("权限配置-->MyShiroRealm.doGetAuthorizationInfo()");
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
-        UserInfo userInfo  = (UserInfo)principals.getPrimaryPrincipal();
+        UserInfo userInfo  = (UserInfo)principalCollection.getPrimaryPrincipal();
         for(SysRole role:userInfo.getRoleList()){
             authorizationInfo.addRole(role.getRole());
             for(SysPermission p:role.getPermissions()){
