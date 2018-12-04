@@ -1,4 +1,4 @@
-package com.fnl.caesar.web.model;
+package com.fnl.caesar.sso.model;
 
 
 import javax.persistence.*;

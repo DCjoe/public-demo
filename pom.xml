@@ -10,6 +10,8 @@
     <modules>
         <module>wechat</module>
         <module>web</module>
+        <module>rabbitmq</module>
+        <module>sso</module>
     </modules>
     <packaging>pom</packaging>
     <parent>
